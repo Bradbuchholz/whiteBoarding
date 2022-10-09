@@ -25,3 +25,39 @@
 * // Put them in an array? (.push())
 * // Figure out how to get the value at N
 * // Return said value. 
+
+### my prompt
+
+Question #3: Compressing Strings
+Write an algorithm that takes a string with repeated characters and compresses them, using a number to show how many times the repeated character has been compressed. For instance, aaa would be written as 3a. Solve the problem with and without recursion.
+
+Example
+Input: "aaabccdddda"
+
+Output: "3ab2c4da"
+
+function compress(string) {
+  let outputString = "";
+  let currentLetter = string[0];
+  let count = 1;
+  for (let i = 1; i < string.length; i++) {
+    if (string[i] === currentLetter) {
+        count++;
+    } else if (count !== 1) {
+        outputString += count + currentLetter;
+      currentLetter = string[i];
+      count = 1;
+    } else {
+        outputString += currentLetter;
+      currentLetter = string[i];
+    }
+  }
+  if (count === 1) {
+      outputString += currentLetter;
+  } else {
+      outputString += count + currentLetter;
+  }
+  console.log(outputString);
+}
+
+compress("aaabccdddda");
