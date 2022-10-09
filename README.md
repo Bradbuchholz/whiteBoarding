@@ -1,7 +1,3 @@
-## Researching prompt 1 - turning strings to URLs
-* how many spaces? 
-
-
 ### example
 * // Given n, return the nth number (number at the position of n) of the Fibonacci Sequence where n >= 1
 
